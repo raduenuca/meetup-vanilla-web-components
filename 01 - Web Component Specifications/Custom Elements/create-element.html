@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Creating a custom element</title>
+        <script>
+            class HelloWorld extends HTMLElement {
+                constructor() {
+                    super();
+                    console.log('HelloWorld element constructed!');
+                }
+
+                greet(value) {
+                    console.log('Hello', value);
+                }
+            }
+            window.customElements.define('hello-world', HelloWorld);
+
+//            let $ce = document.querySelector('hello-world')
+//            $ce.greet('World')
+        </script>
+    </head>
+    <body>
+        <hello-world></hello-world>
+    </body>
+</html>
+
+
+

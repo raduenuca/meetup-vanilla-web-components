@@ -1,0 +1,21 @@
+{
+  "name": "meetup-vanilla-web-components",
+  "homepage": "https://github.com/raduenuca/meetup-vanilla-web-components",
+  "authors": [
+    "raduenuca <raduenuca@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "document-register-element": "^1.4.1"
+  }
+}

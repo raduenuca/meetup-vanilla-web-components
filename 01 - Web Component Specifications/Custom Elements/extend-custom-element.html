@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Extending a Custom Element</title>
+        <script>
+            class DivisionElement extends HTMLElement {
+                divideByTen(value) {
+                    console.log(parseInt(value) / 10);
+                }
+            }
+            window.customElements.define("do-division", DivisionElement);
+
+            class MultiplyElement extends DivisionElement {
+                multiplyByTen(value) {
+                    console.log(parseInt(value) * 10);
+                }
+            }
+            window.customElements.define("do-multiply", MultiplyElement);
+        </script>
+    </head>
+    <body>
+        <do-division></do-division>
+        <do-multiply></do-multiply>
+    </body>
+</html>

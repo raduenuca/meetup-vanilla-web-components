@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Introduction to CSS Custom Properties</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                --primary-color: orange;
+                --secondary-color: navy;
+                --border-color: red;
+            }
+
+            .container {
+                height: 100%;
+                margin: 0 auto;
+                width: 550px;
+                display: flex;
+                align-content: center;
+                flex-flow: row wrap;
+            }
+
+            .box {
+                width: 250px;
+                height: 250px;
+                border: solid 1px #cccccc;
+                margin: 5px;
+            }
+
+            .one {
+                background-color: var(--primary-color, orangered);
+                border-color: var(--border-color, orangered);
+            }
+
+            .two {
+                background-color: var(--secondary-color, greenyellow);
+                border-color: var(--border-color, greenyellow);
+            }
+
+            .three {
+                background-color: var(--secondary-color, deepskyblue);
+                border-color: var(--border-color, deepskyblue);
+            }
+
+            .four {
+                background-color: var(--primary-color, gold);
+                border-color: var(--border-color, gold);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+            <div class="box four"></div>
+        </div>
+    </body>
+</html>
+

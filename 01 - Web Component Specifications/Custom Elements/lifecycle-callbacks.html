@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Creating a custom element</title>
+        <script>
+            class HelloWorld extends HTMLElement {
+                constructor() {
+                    super();
+                    console.log('HelloWorld element constructed!');
+                }
+                connectedCallback() {
+                    console.log('HelloWorld element added to the DOM!');
+                }
+                static get observedAttributes() {
+                    return ['greeting'];
+                }
+                attributeChangedCallback(name, oldValue, newValue) {
+                    console.log('Attribute Changed!', name, oldValue, newValue);
+                }
+                disconnectedCallback() {
+                    console.log('HelloWorld element removed from the DOM!');
+                }
+
+                greet(value) {
+                    console.log('Hello', value);
+                }
+            }
+            window.customElements.define('hello-world', HelloWorld);
+        </script>
+    </head>
+    <body>
+        <script>
+            // Create an instance of our Custom Element
+            //let $ce = document.createElement("hello-world");
+            //document.body.appendChild($ce);
+            // document.querySelector('my-custom-element').setAttribute('greeting', 'Hello World')
+            //document.querySelector('my-custom-element').remove()
+        </script>
+    </body>
+</html>
+
+
+

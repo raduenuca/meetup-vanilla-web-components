@@ -1,0 +1,20 @@
+<template>
+    <style>
+        h1 {
+            color: #ff6600;
+        }
+    </style>
+    <h1>Hello World!</h1>
+</template>
+
+<script>
+    const $owner = (document._currentScript || document.currentScript).ownerDocument;
+    const $template = $owner.querySelector('template');
+    class HelloWorld extends HTMLElement {
+        connectedCallback() {
+            const $content = document.importNode($template.content, true);
+            this.appendChild($content);
+        }
+    }
+    window.customElements.define('hello-world', HelloWorld);
+</script>

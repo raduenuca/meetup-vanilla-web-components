@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Imports</title>
+        <link rel="import" href="hello-world.html" id="greeter">
+    </head>
+    <body>
+        <script>
+            const $link = document.getElementById("greeter");
+            const content = $link.import.querySelector(".greeter-frame");
+            document.body.appendChild(content.cloneNode(true));
+        </script>
+    </body>
+</html>

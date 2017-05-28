@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>@apply mixins</title>
+        <script src="random-greeter.js"></script>
+        <style>
+            h1 {
+                color: #ff6600 !important;
+            }
+
+            random-greeter {
+                --var-bg-color: navy;
+                --var-color: red;
+
+                --greeter-styles: {
+                    font-family: "Bauhaus 93";
+                    font-size: x-large;
+                    border: dotted 5px red;
+                    text-align: left;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <random-greeter interval="1000">
+            <marquee behavior="alternate" direction="right" slot="top">Yolo !!!</marquee>
+            <marquee behavior="scroll" direction="up" slot="bottom">Yay !!!</marquee>
+        </random-greeter>
+    </body>
+</html>

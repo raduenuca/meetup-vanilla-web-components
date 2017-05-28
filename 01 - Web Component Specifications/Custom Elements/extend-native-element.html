@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Extending a Native Element</title>
+        <!--https://github.com/WebReflection/document-register-element-->
+        <script src="../../bower_components/document-register-element/build/document-register-element.js"></script>
+        <script>
+            class CustomAnchor extends HTMLAnchorElement {
+                connectedCallback() {
+                    this.addEventListener("click", e => {
+                        e.preventDefault();
+                        const result = confirm("Are you sure?");
+                        if (result) {
+                            window.location.href = e.target.href;
+                        }
+                    });
+                }
+            }
+            window.customElements.define("custom-anchor", CustomAnchor, { extends: "a" });
+        </script>
+    </head>
+    <body>
+        <a is="custom-anchor" href="http://www.google.com/" >Go to Google</a>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML Template</title>
+    </head>
+    <body>
+        <template id="list-item">
+            <li>
+                <h1>A Movie Title</h1>
+                <p>A movie plot.</p>
+            </li>
+        </template>
+        <ul id="movie-list"></ul>
+        <script>
+            const items = [
+                {
+                    "title": "The Lord of the Rings: The Fellowship of the Ring",
+                    "plot": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle Earth from the Dark Lord Sauron."
+                },
+                {
+                    "title": "The Lord of the Rings: The Two Towers",
+                    "plot": "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard."
+                },
+                {
+                    "title": "The Lord of the Rings: The Return of the King",
+                    "plot": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring."
+                }
+            ];
+            const $template = document.getElementById("list-item");
+            const $list = document.getElementById("movie-list");
+            items.forEach((movie) => {
+                const $clone = document.importNode($template.content, true);
+                $clone.querySelector("h1").innerText = movie.title;
+                $clone.querySelector("p").innerText = movie.plot;
+                $list.appendChild($clone);
+            });
+        </script>
+    </body>
+</html>
